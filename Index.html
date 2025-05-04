@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contagem Regressiva - Retorno Online</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #counter {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #00ff88;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+    .chat-button {
+      margin-top: 40px;
+      background-color: #00ff88;
+      color: #121212;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .chat-button:hover {
+      background-color: #00cc6a;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #aaaaaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Faltam</h1>
+  <div id="counter">...</div>
+  <h2>dias para meu retorno online!</h2>
+
+  <a class="chat-button" href="" target="_blank">
+    × off
+  </a>
+
+  <footer>
+    Volto em 1º de janeiro. Até lá, 1 ano off.
+    obs: Vou ficar só 1 dia on
+  </footer>
+
+  <script>
+    function atualizarContador() {
+      const hoje = new Date();
+      const proximoJaneiro = new Date(hoje.getFullYear() + 1, 0, 1);
+      const diff = proximoJaneiro - hoje;
+      const dias = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("counter").innerText = dias;
+    }
+
+    atualizarContador();
+    setInterval(atualizarContador, 1000 * 60 * 60); // Atualiza a cada hora
+  </script>
+</body>
+</html>
